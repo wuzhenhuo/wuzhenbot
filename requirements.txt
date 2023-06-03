@@ -5,3 +5,4 @@ tiktoken
 chromadb 
 nest_asyncio
 transformers
+stability_sdk
