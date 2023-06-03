@@ -11,12 +11,6 @@ from google.protobuf.json_format import MessageToJson
 from app_config import *
 from utils import *
 
-OPENAI_API_KEY="e991a7e6e88e4148b9d835ccdc977c1e"
-OPENAI_API_BASE="https://aiprompt.openai.azure.com/"
-OPENAI_API_TYPE="azure"
-OPENAI_ENGINE="ChatGPT"
-STABILITY_HOST="gipc.stability.ai:433"
-STABILITY_API_KEY="sk-NH2rIUz62Ser3hEQOxiiUKRimchTPD3ad5sqJf9fBlmHTfaU"
 # Set global variables
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
