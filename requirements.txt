@@ -1,8 +1,4 @@
 openai
-langchain 
-openpyxl 
-tiktoken 
-chromadb 
-nest_asyncio
+streamlit
 transformers
-stability_sdk
+stability-sdk
