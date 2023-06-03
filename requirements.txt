@@ -1,0 +1,7 @@
+openai
+langchain 
+openpyxl 
+tiktoken 
+chromadb 
+nest_asyncio
+transformers
