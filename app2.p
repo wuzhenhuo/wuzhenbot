@@ -1,7 +1,5 @@
 import streamlit as st
 import os
-from dotenv import load_dotenv
-load_dotenv() 
 import openai
 
 print(os.environ['OPENAI_API_KEY'])
