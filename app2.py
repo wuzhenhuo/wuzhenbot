@@ -14,6 +14,7 @@ print(os.environ['OPENAI_ENGINE'])
 # Define the chatbot function
 def chat_with_model(messages):
     response = openai.ChatCompletion.create(
+        model="gpt-35-turbo",
         engine=os.environ['OPENAI_ENGINE'],
         messages=messages,
         max_tokens=100,
