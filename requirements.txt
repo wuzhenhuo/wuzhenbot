@@ -1,4 +1,0 @@
-openai
-streamlit
-transformers
-stability-sdk
