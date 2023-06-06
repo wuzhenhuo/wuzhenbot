@@ -15,7 +15,7 @@ def chat_with_model(messages):
         model="gpt-35-turbo",
         engine=os.environ['OPENAI_ENGINE'],
         messages=messages,
-        max_tokens=100,
+        max_tokens=4000,
     )
     return response.choices[0].message.content
 
