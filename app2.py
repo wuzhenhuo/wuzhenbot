@@ -1,7 +1,13 @@
+import importlib
 import streamlit as st
 import os
 import openai
-
+importlib.reload(openai)
+if "openai_key" in st.session_state:
+    openai.api_key = st.session_state["openai_key"]
+    openai.api_base = st.session_state["OPENAI_API_BASE"].rstrip("/")
+    openai.api_type = st.session_state["OPENAI_API_TYPE"]
+    openai.api_version = "2023-12-01-preview"
 print(os.environ['OPENAI_API_KEY'])
 print(os.environ['OPENAI_API_BASE'])
 print(os.environ['OPENAI_API_TYPE'])
