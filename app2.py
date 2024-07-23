@@ -7,7 +7,7 @@ if "openai_key" in st.session_state:
     openai.api_key = st.session_state["openai_key"]
     openai.api_base = st.session_state["OPENAI_API_BASE"].rstrip("/")
     openai.api_type = st.session_state["OPENAI_API_TYPE"]
-    openai.api_version = "2024-02-15-preview"
+    openai.api_version = "2024-05-13-preview"
 #print(os.environ['OPENAI_API_KEY'])
 #print(os.environ['OPENAI_API_BASE'])
 #print(os.environ['OPENAI_API_TYPE'])
@@ -18,7 +18,7 @@ if "openai_key" in st.session_state:
 # Define the chatbot function
 def chat_with_model(messages):
     response = openai.ChatCompletion.create(
-        model="gpt-35-turbo",
+        model="gpt-4o",
         engine=os.environ['OPENAI_ENGINE'],
         messages=messages,
         max_tokens=4000,
