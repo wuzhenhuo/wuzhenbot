@@ -1,5 +1,6 @@
 import importlib
 import streamlit as st
+pip install --upgrade streamlit
 import os
 import openai
 importlib.reload(openai)
