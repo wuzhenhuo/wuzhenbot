@@ -67,11 +67,7 @@ def main():
         st.session_state["messages"].append(assistant_response)
 
         # We need to manually rerun the Streamlit script so that Streamlit can process the new state and display it
-        # st.experimental_rerun()
-        @st.cache
-def my_app():
-    # Your app code here
-    pass
+        st.experimental_rerun()
 
 if __name__ == "__main__":
     main()
