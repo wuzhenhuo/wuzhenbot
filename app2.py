@@ -2,41 +2,32 @@ import importlib
 import streamlit as st
 import os
 import openai
-
-# Reload openai module
 importlib.reload(openai)
-
-# Check and set OpenAI credentials from session state
 if "openai_key" in st.session_state:
     openai.api_key = st.session_state["openai_key"]
     openai.api_base = st.session_state["OPENAI_API_BASE"].rstrip("/")
     openai.api_type = st.session_state["OPENAI_API_TYPE"]
     openai.api_version = "2024-05-13-preview"
-else:
-    st.error("OpenAI API credentials are not set in session state.")
-
-# Load environment variables from .env file (if any)
+#print(os.environ['OPENAI_API_KEY'])
+#print(os.environ['OPENAI_API_BASE'])
+#print(os.environ['OPENAI_API_TYPE'])
+#print(os.environ['OPENAI_ENGINE'])
+# Load environment variables from .env file
 # Set up your OpenAI API credentials
-if not openai.api_key:
-    st.error('OpenAI API key is not set. Please set it in the session state or environment variables.')
 
 # Define the chatbot function
 def chat_with_model(messages):
-    try:
-        response = openai.ChatCompletion.create(
-            model="gpt-4",
-            engine=os.environ.get('OPENAI_ENGINE', 'default-engine'),
-            messages=messages,
-            max_tokens=4000,
-        )
-        return response.choices[0].message.content
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
-        return "Sorry, I encountered an error while processing your request."
+    response = openai.ChatCompletion.create(
+        model="gpt-4o",
+        engine=os.environ['OPENAI_ENGINE'],
+        messages=messages,
+        max_tokens=4000,
+    )
+    return response.choices[0].message.content
 
 # Streamlit app code
 def main():
-    st.title("Alexzhenwu's Chatbot")
+    st.title("Alexzhenwu'sChatbot")
 
     # Initialize session state for messages if it doesn't exist
     if 'messages' not in st.session_state:
@@ -55,9 +46,9 @@ def main():
     # Display existing conversation		
     with chat_history_container:
         for message in st.session_state["messages"]:
-            if message["role"] == "user":
+            if(message["role"]=="user"):
                 st.markdown(f"**You**: {message['content']}")
-            elif message["role"] == "assistant":
+            elif (message["role"]=="assistant"):
                 st.markdown(f"_Assistant_: {message['content']}")	    		
 
     # Add user input at the bottom of the page		    
