@@ -69,9 +69,6 @@ def main():
         # We need to manually rerun the Streamlit script so that Streamlit can process the new state and display it
         st.experimental_rerun()
 
-if __name__ == "__main__":
-    main()
-    
 
 if __name__ == "__main__":
     main()
