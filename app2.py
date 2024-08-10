@@ -67,7 +67,10 @@ def main():
         st.session_state["messages"].append(assistant_response)
 
         # We need to manually rerun the Streamlit script so that Streamlit can process the new state and display it
-        st.experimental_rerun()
+        # st.experimental_rerun()
+        if st.button("Rerun"):
+    # Rerun the app
+    # You can use other methods to rerun the app here
 
 if __name__ == "__main__":
     main()
