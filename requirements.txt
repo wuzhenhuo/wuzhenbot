@@ -4,4 +4,4 @@ openpyxl
 tiktoken 
 chromadb 
 nest_asyncio
-streamlit=1.13.0 
+streamlit
